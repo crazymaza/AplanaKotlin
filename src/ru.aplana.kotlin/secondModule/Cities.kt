@@ -9,21 +9,45 @@ fun main() {
     - Выход из программы
     Для хранения используйте коллекцию типа List.
      */
-    println("Есть список городов, что вы хотите с ним сделать?")
     val menu =
         arrayOf("Добавить город", "Посмотреть все города", "Посмотреть список без повторений", "Выход из программы")
     var menuNumber = 1
     val cities = arrayListOf<String>()
-
-    //Реализуем вывод меню.
-    for (menuItem in menu) {
-        println("${menuNumber++}. $menuItem")
-    }
-
-    //Реализуем пользовательский ввод.
-
-    //Реализуем добавление города.
-    //Реализуем просмотр всех городов
-    //Реализуем просмотр без повторений. LinkedList
+    do {
+        //Реализуем вывод меню.
+        println("Есть список городов, что вы хотите с ним сделать?")
+        for (menuItem in menu) {
+            println("${menuNumber++}. $menuItem")
+        }
+        val choice = readLine()!!
+        //Реализуем пользовательский ввод.
+        when (choice) {
+            "1" -> {
+                println("Добавляйте город.")
+                //Реализуем добавление города.
+                cities.add(readLine()!!)
+                println()
+                menuNumber = 1
+            }
+            "2" -> {
+                //Реализуем просмотр всех городов
+                println("Все города:")
+                for (city in cities) {
+                    print("$city\t")
+                }
+                menuNumber = 1
+            }
+            "3" -> {
+                //Реализуем просмотр без повторений. LinkedHashSet
+                println("Все города без повторений:")
+                val noRepetition = linkedSetOf<String>()
+                noRepetition.addAll(cities)
+                for (noRep in noRepetition) {
+                    print("$noRep\t")
+                }
+                menuNumber = 1
+            }
+        }
     //Реализуем выходи из программы.
+    } while (choice != "4")
 }
