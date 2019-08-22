@@ -14,13 +14,13 @@ fun main(args: Array<String>) {
 
 //TODO(reason = Задание 3, модуль 1)
     val five = '5'
-    five.toString()
-    five.toByte()
-    five.toShort()
-    five.toInt()
-    five.toDouble()
-    five.toFloat()
-    five.toLong()
+    val sFive = five.toString()
+    sFive.toByte()
+    sFive.toShort()
+    sFive.toInt()
+    sFive.toDouble()
+    sFive.toFloat()
+    sFive.toLong()
 
 //TODO(reason = Задание 4, модуль 1)
     println("Привет! Как тебя зовут?")

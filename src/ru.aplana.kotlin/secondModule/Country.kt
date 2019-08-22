@@ -1,14 +1,12 @@
 fun main() {
-    val country = Array(3, { Array(3, { "" }) })
+    val country = Array(4, { Array(4, { "" }) })
     country[0] = arrayOf("Russia", "France", "Germany")
     country[1] = arrayOf("Moscow", "Paris", "Berlin")
     country[2] = arrayOf("Ruble", "Euro", "Euro")
+    var o = 0
 
-    for (countryName in country) {
-        print("$countryName\t")
-        for (capital in countryName) {
-            print("$capital\t")
-        }
-        println()
-    }
+    do {
+        println("${country[0][o]}\t${country[1][o]}\t${country[2][o]}")
+        o++
+    } while (o < country[0].size)
 }
