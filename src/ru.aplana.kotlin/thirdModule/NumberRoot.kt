@@ -1,11 +1,22 @@
 package ru.aplana.kotlin.thirdModule
 
+import kotlin.math.sqrt
+
 /**
  * Задание 16
  */
 fun main() {
-    fun Double.root() = this * this
+    fun Int.root(): Int {
+//        return sqrt(this.toDouble()).toInt()
+        var t: Double
+        var squareRoot = this / 2
+        do {
+            t = squareRoot.toDouble()
+            squareRoot = ((t + this / t) / 2).toInt()
+        } while (t - squareRoot != 0.0)
+        return squareRoot
+    }
 
-    val double = 2.0
+    val double = 70
     println(double.root())
 }
